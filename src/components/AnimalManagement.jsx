@@ -66,7 +66,7 @@ const AnimalManagement = () => {
           onClick={() => setIsFormVisible(!isFormVisible)}
           className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 mb-4"
         >
-          Enregistrer un mouton
+          Ajouter un mouton
         </button>
         {isFormVisible && (
           <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
