@@ -28,7 +28,7 @@ const Services = () => {
         <div className="flex flex-wrap justify-center">
           {services.map((service, index) => (
             <div key={index} className="w-full md:w-1/3 p-4">
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="flex items-center justify-center mb-2 h-16 w-16 mx-auto">
                   {service.icon}
                 </div>

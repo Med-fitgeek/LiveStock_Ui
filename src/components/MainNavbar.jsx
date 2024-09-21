@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaCog } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const MainNavbar = () => {
-  const navigate = useNavigate();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const MainNavbar = ({ sections, setActiveSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -23,51 +16,48 @@ const MainNavbar = () => {
             <img src="/images/logo.png" alt="Logo" className="h-12 w-auto" />
           </Link>
         </div>
-        <div className="relative">
+
+        {/* Menu hamburger */}
+        <div className="relative md:hidden">
           <button
-            onClick={toggleDropdown}
-            className="focus:outline-none"
+            className="block text-white p-4 focus:outline-none"
+            onClick={toggleMenu}
           >
-            <FaCog className="text-white h-6 w-6" />
+            Menu
           </button>
-          {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
-              <ul className="py-1">
-                <li>
-                  <Link
-                    to="/change-password"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Changer de mot de passe
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/profile"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Profil
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/settings"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Paramètres
-                  </Link>
-                </li>
-                <li>
-                  <button
-                    onClick={handleLogout}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Se déconnecter
-                  </button>
-                </li>
-              </ul>
+
+          {/* Menu complet en version mobile */}
+          <div className={`absolute top-0 right-0 mt-16 w-48 bg-green-600 text-white whitespace-nowrap ${isMenuOpen ? 'block' : 'hidden'}`}>
+            <div className="container mx-auto flex flex-col">
+              {sections.map((section) => (
+                <button
+                  key={section.id}
+                  className={`px-4 py-2 ${section.id === setActiveSection ? 'bg-green-500' : 'bg-green-700'} hover:bg-green-500 focus:outline-none`}
+                  onClick={() => {
+                    setActiveSection(section.id);
+                    setIsMenuOpen(false); // Fermer le menu après avoir cliqué sur une section
+                  }}
+                >
+                  {section.name}
+                </button>
+              ))}
             </div>
-          )}
+          </div>
+        </div>
+
+        {/* Menu complet en version desktop */}
+        <div className="hidden md:flex">
+          <div className="container mx-auto flex">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                className={`px-4 py-2 ${section.id === setActiveSection ? 'bg-green-500' : 'bg-green-700'} hover:bg-green-500 focus:outline-none`}
+                onClick={() => setActiveSection(section.id)}
+              >
+                {section.name}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
