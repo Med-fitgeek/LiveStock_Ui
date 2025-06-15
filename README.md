@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# 🐑 Guett-GUI – Application Web de Gestion de bétail 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Guett-GUI** est une application web moderne conçue pour accompagner les éleveurs dans la gestion de leur cheptel, en particulier les **moutons**, avec un suivi précis des **pedigrees**, de la **santé**, de la **reproduction**, et bien plus.
 
-## Available Scripts
+> 🌍 Inspirée des besoins spécifiques rencontrés dans ma région d’origine en **Afrique de l’Ouest**, cette application apporte une solution numérique simple, intuitive et adaptée aux réalités locales de l’élevage.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Fonctionnalités Clés
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🧬 **Gestion des Pedigrees** : Suivi des lignées familiales, parents et descendants.
+- 💉 **Suivi Sanitaire** : Historique des soins, maladies, traitements, et vaccins.
+- ♻️ **Reproduction** : Enregistrement des cycles, des accouplements, naissances et gestations.
+- 📋 **Fiches Animales** : Informations détaillées sur chaque mouton (photo, date de naissance, statut, etc.)
+- 📊 **Tableaux de bord** : Statistiques en temps réel (croissance du cheptel, mortalité, etc.)
+- 📱 **Interface Responsive** : Fonctionne sur ordinateur, tablette et mobile.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Stack Technique
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend** : [React](https://reactjs.org/)
+- **UI/UX** : CSS Modules / BootStrap 
+- **Langage** : TypeScript
+- **API** : Intégration avec un backend REST 
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation locale
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Cloner le projet
+git clone https://github.com/Med-fitgeek/guett-gui.git
+cd guett-gui
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Installer les dépendances
+npm install
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Lancer le serveur de développement
+npm start
